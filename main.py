@@ -53,15 +53,24 @@ while True:
     annual = int(input("> Introduce tus ingresos anuales: "))
     dependent = int(input("> Introduce el numero de dependientes: "))
     dependent2 = 1000 * dependent
-    if annual >= 0 and annual <= 30000:
+    if annual >= 0 and annual <= 40000 and dependent >= 2:
+        print("No debe pagar impuestos")
+        break
+    elif annual >= 0 and annual <= 30000:
         print("Impuesto a pagar:")
         print("Q.",annual * 0.05, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.05 + dependent2)
         break
-    if annual >= 30001 and annual <= 60000:
+    elif annual >= 30001 and annual <= 60000:
         print("Impuesto a pagar:")
         print("Q.", annual * 0.1, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.1 + dependent2)
         break
-    if annual >= 60001 and annual <= 100000:
+    elif annual >= 60001 and annual <= 100000:
         print("Impuesto a pagar:")
         print("Q.", annual * 0.15, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.15 + dependent2)
+        break
+    elif annual >= 100001:
+        print("Impuesto a pagar:")
+        print("Q.", annual * 0.2, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.2 + dependent2)
+    else:
+        print("ingrese bien los datos solicitados")
 
