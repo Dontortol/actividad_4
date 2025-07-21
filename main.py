@@ -1,4 +1,5 @@
 # Ejercicio 1
+'''
 departamentos = ['Alta Verapaz','Baja Verapaz', 'Chimaltenango','Chiquimula','Guatemala',
                  'El Progreso','Escuintla','Huehuetenango','Izabal','Jalapa','Jutiapa','Peten',
                  'Quetzaltenango','Quiche','Retalhuleu','Sacatepequez','San Marcos','Santa Rosa',
@@ -43,3 +44,24 @@ while True:
         print(f"Bienvenido {name}, su centro de votacion es en {departamentos[depart - 1]} ")
         break
     break
+'''
+
+# Ejercico 2
+
+while True:
+    print("----Bienvenido al programa de impuestos progresivos----")
+    annual = int(input("> Introduce tus ingresos anuales: "))
+    dependent = int(input("> Introduce el numero de dependientes: "))
+    dependent2 = 1000 * dependent
+    if annual >= 0 and annual <= 30000:
+        print("Impuesto a pagar:")
+        print("Q.",annual * 0.05, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.05 + dependent2)
+        break
+    if annual >= 30001 and annual <= 60000:
+        print("Impuesto a pagar:")
+        print("Q.", annual * 0.1, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.1 + dependent2)
+        break
+    if annual >= 60001 and annual <= 100000:
+        print("Impuesto a pagar:")
+        print("Q.", annual * 0.15, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.15 + dependent2)
+
