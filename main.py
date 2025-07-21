@@ -47,7 +47,7 @@ while True:
 '''
 
 # Ejercico 2
-
+'''
 while True:
     print("----Bienvenido al programa de impuestos progresivos----")
     annual = int(input("> Introduce tus ingresos anuales: "))
@@ -73,4 +73,53 @@ while True:
         print("Q.", annual * 0.2, ", por el numero de dependientes su pago final sera de", "Q.", annual * 0.2 + dependent2)
     else:
         print("ingrese bien los datos solicitados")
+'''
+# Ejercicio 3
+'''
+class Users:
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
 
+users =[
+    Users("Rodrigo", "12345" ),
+    Users("Rene", "6789"),
+    Users("Ricky", "hola"),
+]
+
+while True:
+    print("----Ingresa tu nombre de usuario y contraseña (Escribe 1 en el usuario para salir)----")
+    user = input("> Introduce tu nombre: ")
+    if user == "1":
+        print("Saliendo del sistema")
+        break
+    password1 = input("> Introduce tu contraseña: ")
+    for i in users:
+        if i.name == user and i.password == password1:
+            print(f"Bienvenido al menu {i.name}")
+            while True:
+                print("1. Ver perfil\n"
+                      "2. Cambiar contraseña\n"
+                      "3. Cerrra sesion")
+                select = input("Ingrese la opcion que quiera: ")
+                if select == "1":
+                    print(f"Nombre de usuario: {i.name}\n"
+                          f"Tu contraseña es: {i.password}\n"
+                          f"")
+                    continue
+                elif select == "2":
+                    password2 = input("Ingrese su contraseña: ")
+                    for u in users:
+                        if u.password == password2:
+                            change_pass = input("Ingrese nueva contraseña: ")
+                            u.password = change_pass
+                            print(f"Tu nueva contraseña es: {change_pass}")
+                            break
+                elif select == "3":
+                    print("Cerrando sesion")
+                    break
+                break
+            break
+        else:
+            print("No se encuentra el usuario")
+'''
