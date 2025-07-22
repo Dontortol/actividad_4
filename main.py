@@ -236,7 +236,26 @@ while True:
     distance = int(input("Ingrese la distancia de la entrega: "))
     urgency = input("El paquete es urgente?: ").lower()
     size = input("Ingrese el tamaño (grande/mediano/pequeño): ").lower()
-
+    if weight >= 6 and distance >= 20:
+        weight_distance = weight + distance
+        print(f"precio de envio {weight_distance}kg")
+        break
+    if size == "grande":
+        weight_size = weight + distance + 30
+        print(f"precio de envio por el tamaño aumenta a {weight_size}kg")
+        break
+    if urgency == "si":
+        weight_urgency = weight + distance + 50
+        print(f"El precio por su envio es de: {weight_urgency}kg ")
+        break
+    if size == "grande" and urgency == "si" :
+        print(f"Total por de envio por cargos: {weight + distance + 80}kg")
+        break
+    if weight >= 0 and weight <= 5 and urgency == "no":
+        print(f"se ha descontado Q.20 El precio con descuento es: {weight + distance - 20}kg ")
+        break
+    else:
+        print("Ingreso mal los datos")
 
 
 
