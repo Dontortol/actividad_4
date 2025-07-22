@@ -281,6 +281,18 @@ print("----Notas finales----\n"
       f"{notes}")
 '''
 
-#
+# Ejercicio 8
+
+while True:
+    point_a = input("Ingrese el punto a: ").lower()
+    point_b = input("Ingrese el punto b: ").lower()
+
+    if point_a == "norte" and point_b == "este":
+        print("Noreste")
+        break
+    if point_a == "sur" and point_b == "este":
+        print("Sureste")
+        break
+
 
 
