@@ -45,6 +45,7 @@ while True:
         break
     break
 '''
+from platform import processor
 
 # Ejercico 2
 '''
@@ -75,7 +76,7 @@ while True:
         print("ingrese bien los datos solicitados")
 '''
 # Ejercicio 3
-
+'''
 class Users:
     def __init__(self, name, password):
         self.name = name
@@ -127,3 +128,34 @@ while tries < 3:
                         break
                     break
                 break
+'''
+# Ejercicio 4
+
+prices = []
+while True:
+    print("productos de mercado")
+    print("1. Agegar producto \n"
+          "2. Continuar\n"
+          "3. Ver carrito")
+    select = input("Ingrese la opcion que quiera: ")
+    if select == "1":
+        price = int(input("> Ingrese precio del producto: "))
+        prices.append(price)
+    elif select == "3":
+        print(prices)
+    elif select == "2":
+        while True:
+            tips = input("Desea dejar propina?: ")
+            if tips == "si":
+                tip = float(input("> Ingrese la propina que quiere dejar en porcentaje: "))
+                tip = tip
+            elif tips == "no":
+                continue
+                discount_card = input("> Tiene tarjeta de descuento?: ")
+                if discount_card == "si":
+                    discount = prices * 0.1
+                    print("Se ha descontado un 10%")
+                elif discount_card == "no":
+                    continue
+
+
