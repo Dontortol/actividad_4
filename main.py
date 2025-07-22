@@ -230,3 +230,13 @@ print("El dia de la semana fue " + week[int(h)])
 
 # Ejercicio 6
 
+while True:
+    print("----Bienvenido al programa de envio----")
+    weight = int(input("Ingrese el peso del paquete en kg: "))
+    distance = int(input("Ingrese la distancia de la entrega: "))
+    urgency = input("El paquete es urgente?: ").lower()
+    size = input("Ingrese el tamaño (grande/mediano/pequeño): ").lower()
+
+
+
+
