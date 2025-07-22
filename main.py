@@ -45,7 +45,6 @@ while True:
         break
     break
 '''
-from platform import processor
 
 # Ejercico 2
 '''
@@ -229,7 +228,7 @@ print("El dia de la semana fue " + week[int(h)])
 '''
 
 # Ejercicio 6
-
+'''
 while True:
     print("----Bienvenido al programa de envio----")
     weight = int(input("Ingrese el peso del paquete en kg: "))
@@ -256,7 +255,32 @@ while True:
         break
     else:
         print("Ingreso mal los datos")
+'''
+# Ejercicio 7
+'''
+students = {}
+notes = {}
 
+for i in range(5):
+    student = input("Ingrese el nombre del estudiante: ")
+    note1 = int(input("Ingrese la nota del estudiante: "))
+    note2 = int(input("Ingrese la nota del estudiante: "))
+    note3 = int(input("Ingrese la nota del estudiante: "))
+    students[student] = [note1, note2, note3]
+    notes[student] = (note1 + note2 + note3) / 3
+    print(f"El promedio de los estudiantes es: {[[notes[student]]]}")
+for i in notes:
+    print("el promedio final es: ")
+    if notes[i] > 70:
+        break
+else:
+    for s in students:
+        students[s] = [students[s][0] + 5, students[s][1] + 5, students[s][2] + 5]
+        notes[s] = sum(students[s])/3
+print("----Notas finales----\n"
+      f"{notes}")
+'''
 
+#
 
 
