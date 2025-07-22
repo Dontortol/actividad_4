@@ -135,27 +135,66 @@ prices = []
 while True:
     print("productos de mercado")
     print("1. Agegar producto \n"
-          "2. Continuar\n"
-          "3. Ver carrito")
+          "2. Ver carrito\n"
+          "3. Continuar")
     select = input("Ingrese la opcion que quiera: ")
     if select == "1":
         price = int(input("> Ingrese precio del producto: "))
         prices.append(price)
-    elif select == "3":
-        print(prices)
+        print("\n Precio guardado\n"
+              "")
     elif select == "2":
+        print(f"\n {prices}\n"
+              f"")
+    elif select == "3":
         while True:
-            tips = input("Desea dejar propina?: ")
+            tips = input("Desea dejar propina?: ").lower()
             if tips == "si":
                 tip = float(input("> Ingrese la propina que quiere dejar en porcentaje: "))
-                tip = tip
+                while True:
+                    discount_card = input("> Tiene tarjeta de descuento?: ").lower()
+                    if discount_card == "si":
+                        print("Se ha descontado un 10%")
+                        print("Factura de compra")
+                        subtotal = sum(prices)
+                        subtotal2 = subtotal * 0.12
+                        subtotal3 = subtotal * tip
+                        subtotal4 = subtotal * 0.10
+                        print(f"Subtotal: Q. {subtotal}\n"
+                              f"IVA: {subtotal * 0.12}\n"
+                              f"Propina: {subtotal * tip}\n"
+                              f"Descuento: {subtotal * 0.1}\n"
+                              f"Total: {subtotal + subtotal2 + subtotal3 - subtotal4}\n")
+                    elif discount_card == "no":
+                        print("Factura de compra")
+                        subtotal = sum(prices)
+                        subtotal2 = subtotal * 0.12
+                        subtotal3 = subtotal * tip
+                        print(f"Subtotal: Q. {subtotal}\n"
+                              f"IVA: {subtotal * 0.12}\n"
+                              f"Propina: {subtotal * tip}\n"
+                              f"Descuento: ---------------\n"
+                              f"Total: {subtotal + subtotal2 + subtotal3}\n")
             elif tips == "no":
-                continue
-                discount_card = input("> Tiene tarjeta de descuento?: ")
-                if discount_card == "si":
-                    discount = prices * 0.1
-                    print("Se ha descontado un 10%")
-                elif discount_card == "no":
-                    continue
-
-
+                while True:
+                    discount_card = input("> Tiene tarjeta de descuento?: ").lower()
+                    if discount_card == "si":
+                        print("Se ha descontado un 10%")
+                        subtotal = sum(prices)
+                        subtotal2 = subtotal * 0.12
+                        subtotal4 = subtotal * 0.10
+                        print("Factura de compra")
+                        print(f"Subtotal: Q. {subtotal}\n"
+                              f"IVA: {subtotal * 0.12}\n"
+                              f"Propina: ------------\n"
+                              f"Descuento: {subtotal * 0.1}\n"
+                              f"Total: {subtotal + subtotal2 - subtotal4}\n")
+                    elif discount_card == "no":
+                        subtotal = sum(prices)
+                        subtotal2 = subtotal * 0.12
+                        print("Factura de compra")
+                        print(f"Subtotal: Q. {subtotal}\n"
+                              f"IVA: {subtotal * 0.12}\n"
+                              f"Propina: ------------\n"
+                              f"Descuento: ---------------\n"
+                              f"Total: {subtotal + subtotal2}\n")
