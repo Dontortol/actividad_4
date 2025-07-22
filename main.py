@@ -130,7 +130,7 @@ while tries < 3:
                 break
 '''
 # Ejercicio 4
-
+'''
 prices = []
 while True:
     print("productos de mercado")
@@ -198,3 +198,35 @@ while True:
                               f"Propina: ------------\n"
                               f"Descuento: ---------------\n"
                               f"Total: {subtotal + subtotal2}\n")
+'''
+# Ejercicio 5 use una guia de google
+# eval es una función integrada que evalúa una cadena como una expresión de Python y devuelve el resultado.
+'''
+year = eval(input("Ingrese el año: "))
+month = eval(input("Ingrese el mes: "))
+day = eval(input("Ingrese el dia: "))
+
+if month == 1 or month == 2:
+    month += 12
+    year -= 1
+
+j = int(year/100)
+k = year%100
+
+h = ((day + (26*(month + 1)/10) + k + int(k/4) + int(j/4) + 5*j)%7)//1
+
+week = {
+    0:"Sabado",
+    1:"Domingo",
+    2:"Lunes",
+    3:"Martes",
+    4:"Miercoles",
+    5:"Jueves",
+    6:"Viernes",
+}
+
+print("El dia de la semana fue " + week[int(h)])
+'''
+
+# Ejercicio 6
+
